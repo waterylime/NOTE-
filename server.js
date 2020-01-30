@@ -49,9 +49,9 @@ app.delete('/api/notes/:id', (req, res) => {
 	res.send(filtered);
 });
 
-const db = path.join(__dirname, '/db/db.json');
+const dblink = path.join(__dirname, '/db/db.json');
 const dbRead = JSON.parse(
-	fs.readFileSync(db, (err, data) => {
+	fs.readFileSync(dblink, (err, data) => {
 		if (err) throw err;
 	})
 );
