@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-let autoIterator: 1;
+let autoIterator = 1;
 const db = JSON.parse(
 	fs.readFileSync(path.join(__dirname, '/db/db.json'), (err, data) => {
 		if (err) throw err;
