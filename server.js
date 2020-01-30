@@ -55,7 +55,7 @@ const dbRead = JSON.parse(
 		if (err) throw err;
 	})
 );
-const dbWrite = (dbRead) => {
+const dbWrite2 = (dbRead) => {
 	fs.writeFileSync(path.join(__dirname, '/db/db.json'), JSON.stringify(dbRead), (err) => {
 		if (err) throw err;
 	});
@@ -65,7 +65,7 @@ app.post('/api/notes', (req, res) => {
 	newNote.id = autoIterator;
 	autoIterator++;
 	dbRead.push(newNote);
-	dbWrite(dbRead);
+	dbWrite2(dbRead);
 	return res.json(dbRead);
 });
 
